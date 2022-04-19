@@ -28,13 +28,31 @@ export default function ItemsList({ items, setItems }) {
                 aria-label='Add a new item to the list'
                 className="common-block">Add</button>
             <div>{[items.map(item => {
-                return <button
-                    onClick={() => {
-                        alert(item.name);
-                    }}
-                    key={item.key}
-                    aria-label='Show the name of the item'
-                    className='common-block item item_white'>{item.name}</button>
+                return (
+                    <div
+                        key={item.key}
+                        className="item">
+                        <div
+                            onClick={() => {
+                                alert(item.name);
+                            }}
+                            aria-label='Show the name of the item'>{item.name}</div>
+                        <button
+                            onClick={() => {
+                                const isUserWantsToDelete = window
+                                    .confirm('Do you really want to delete the item?');
+                                if (!isUserWantsToDelete) {
+                                    return;
+                                }
+                                items.splice(items.indexOf(item), 1);
+                                setItems([...items]);
+                                alert('Item has been deleted');
+                            }}
+                            aria-label='Delete the selected item'
+                            className='item item__button'>
+                            Delete
+                        </button>
+                    </div>);
             })]}</div>
         </>
     );

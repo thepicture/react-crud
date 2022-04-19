@@ -45,15 +45,18 @@
 .common-block {
   padding: 10px;
   margin: 10px;
-  width: 90%;
+  width: 97%;
   display: inline-block;
   border-radius: 10px;
 }
 
 .item {
-  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
 }
 
-.item_white {
-  background-color: white;
+.item__button {
+  width: 90%;
+  cursor: pointer;
 }
