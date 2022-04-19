@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -32,7 +36,24 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.common-block {
+  padding: 10px;
+  margin: 10px;
+  width: 90%;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.item_white {
+  background-color: white;
 }

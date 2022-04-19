@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import ItemsList from './routes/ItemsList';
 
 function App() {
+  const [items, setItems] = useState([
+    {
+      key: 1,
+      name: "Item 1",
+    },
+    {
+      key: 2,
+      name: "Item 2",
+    },
+  ]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ItemsList items={items} setItems={setItems} />
     </div>
   );
 }
